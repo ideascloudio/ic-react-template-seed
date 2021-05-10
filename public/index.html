@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" type="image/png" href="|/#|= webappParams.favicon |#/|"/>
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -13,7 +14,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>|/#|= webappParams.title |#/|</title>
   </head>
   <body>
     <div id="root"></div>
@@ -27,5 +28,9 @@
       To begin the development, run `npm start`.
       To create a production bundle, use `npm run build`.
     -->
+    <script src="sample-setup.js"></script>
+    <script id="ic-script" src="https://ideascloud.io/external-webapp-integration-docs/ic-script.js?useTestSetup=true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.8/lottie.min.js"></script>
+    <script src="setup-loader.js"></script>
   </body>
 </html>
