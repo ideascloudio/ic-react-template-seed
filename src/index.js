@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { Fragment, useContext } from 'react';
 import ReactDOM from 'react-dom';
-import { ICSetupProvider } from './contexts/ICSetup';
+import { ICSetupProvider, icSetupContext } from './contexts/ICSetup';
 import { StylingProvider } from './contexts/Styling';
 
 const App = () => {
+  const { staticSetup, dynamicSetup, executeRAWFunction } = useContext(icSetupContext);
   return (
-    <div>
-      App
-    </div>
+    <Fragment>
+      {!!staticSetup && !!dynamicSetup && (
+        <div>
+          
+          {/* Header */}
+          <div>
+            {staticSetup.content.layout.headerButtons.map((button, idx) => (
+              <button key={idx} onClick={() => {
+                executeRAWFunction(button.action);
+              }}>{ button.label }</button>
+            ))}
+          </div>
+
+          {/* Content */}
+          <div>
+            {dynamicSetup.content.title}
+          </div>
+
+        </div>
+      )}
+    </Fragment>
   )
 }
 
