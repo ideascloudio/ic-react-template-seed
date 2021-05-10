@@ -1,3 +1,3 @@
-## Usage
+## Getting Started
 
-Clone and checkout first version to `seed` branch to keep repo up to date.
+Checkout to main branch to start
