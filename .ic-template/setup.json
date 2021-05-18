@@ -1,0 +1,15 @@
+{
+  "id": "__TEMPLATE_ID__",
+  "sourcePath": "build",
+  "setup": {
+    "technologies": [
+      {
+        "name": "React",
+        "link": "https://reactjs.org/"
+      }
+    ],
+    "structureSchema": {},
+    "snippets": [],
+    "actions": []
+  }
+}
