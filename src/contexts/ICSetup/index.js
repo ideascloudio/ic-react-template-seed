@@ -45,6 +45,24 @@ export const ICSetupProvider = ({ children }) => {
 
   }, []);
 
+  // Set style vars
+  useEffect(() => {
+    if (staticSetup) {
+      staticSetup.styling.colorPalette = staticSetup.styling.colorPalette || {};
+      staticSetup.styling.colorPalette.primaryColors = staticSetup.styling.colorPalette.primaryColors || []
+      staticSetup.styling.colorPalette.secondaryColors = staticSetup.styling.colorPalette.secondaryColors || []
+      staticSetup.styling.colorPalette.primaryColors.forEach((pc, idx)=> {
+        document.documentElement.style.setProperty(`--ic-colors-primary-${idx+1}`, pc);
+      });
+      staticSetup.styling.colorPalette.secondaryColors.forEach((pc, idx)=> {
+        document.documentElement.style.setProperty(`--ic-colors-secondary-${idx+1}`, pc);
+      });
+      Object.keys(staticSetup.styling.colorPalette.complementary).forEach(k => {
+        document.documentElement.style.setProperty(`--ic-colors-complementary-${k}`, staticSetup.styling.colorPalette.complementary[k]);
+      })
+    }
+  }, [staticSetup])
+
 
   return (
     <icSetupContext.Provider value={{
