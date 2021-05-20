@@ -1,7 +1,7 @@
 
 
 document.body.innerHTML += `
-<div id="loader" class="cover" style="display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.4);">
+<div id="loader" style="display: flex; justify-content: center; align-items: center; background: rgba(255, 255, 255, 0.4); width: 100%; height: 100%; position: absolute;">
   <div style="width: 60px; height: 60px;">
     <div id="loader-elem"></div>
   </div>
